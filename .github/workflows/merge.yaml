@@ -154,6 +154,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         default_bump: patch
       if: github.event_name == 'push' && hashFiles('composer.json') != '' && (steps.update.outputs.updated == 'true' || steps.update.outputs.deleted == 'true')
+
     - name: Create a GitHub release
       uses: actions/create-release@v1
       env:
