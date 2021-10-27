@@ -104,7 +104,7 @@ jobs:
         curl -H 'Content-Length:' -H "Authorization: $ZOTERO_UPDATE_TOKEN" -F 'payload={"type":"push","branch":"${{ steps.release.outputs.branch }}","status":0,"commit":"'$GITHUB_SHA'"}' https://styles-update.zotero.org:8826/
 
     - name: Copy workflows to locales repository
-      if: github.repository == 'citation-style-language/styles' && steps.update.outputs.workflows == 'true'
+      if: github.repository == 'adci-nikitap/styles' && steps.update.outputs.workflows == 'true'
       uses: drud/action-cross-commit@master
       with:
         source-folder: .github/workflows
